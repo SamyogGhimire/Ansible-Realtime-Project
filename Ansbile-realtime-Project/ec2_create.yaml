@@ -9,7 +9,7 @@
       key_name: "aws-key"
       instance_type: t2.micro
       security_group: default
-      region: us-east-1
+      region: "{{ aws_region }}"
       aws_access_key: "{{ ec2_access_key }}" #From another variable file (ansible vault)
       aws_secret_key: "{{ ec2_secret_key }}" #From another variable file (ansible vault)
       network:
@@ -18,7 +18,8 @@
       tags:
         Name: "{{ item.name }}" 
     loop:
-      - { image_id: ami-04b70fa74e45c3917, name: "manage-node-1" }
-      - { image_id: ami-0c55b159cbfafe1f0, name: "manage-node-2" }
-      - { image_id: ami-0c55b159cbfafe1f0, name: "manage-node-3" }
-      
+      - { image_id: "{{ ami_ubuntu }}", name: "manage-node-1" }
+      - { image_id: "{{ ami_ubuntu }}", name: "manage-node-2" }
+      - { image_id: "{{ ami_amazon }}", name: "manage-node-3" }
+    tags:
+        - ec2_create
