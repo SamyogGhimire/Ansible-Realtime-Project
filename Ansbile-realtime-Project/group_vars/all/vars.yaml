@@ -1,0 +1,4 @@
+aws_region: us-east-1
+
+ami_ubuntu: ami-04b70fa74e45c3917
+ami_amazon: ami-0c55b159cbfafe1f0
