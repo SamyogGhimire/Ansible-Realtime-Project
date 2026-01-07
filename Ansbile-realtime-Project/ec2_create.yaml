@@ -18,8 +18,8 @@
       tags:
         Name: "{{ item.name }}" 
     loop:
-      - { image_id: "{{ ami_ubuntu }}", name: "manage-node-1" }
-      - { image_id: "{{ ami_ubuntu }}", name: "manage-node-2" }
-      - { image_id: "{{ ami_amazon }}", name: "manage-node-3" }
+      - { image_id: "{{ ami_ubuntu }}", name: "manage-node-1", os: "Ubuntu" }
+      - { image_id: "{{ ami_ubuntu }}", name: "manage-node-2", os: "Ubuntu" }
+      - { image_id: "{{ ami_amazon }}", name: "manage-node-3", os: "Amazon Linux" }
     tags:
         - ec2_create

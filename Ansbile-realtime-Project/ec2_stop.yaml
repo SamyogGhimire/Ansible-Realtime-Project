@@ -5,4 +5,6 @@
   - name: Shutdown Ubuntu instances only
     ansible.builtin.shell: shutdown -h now
     when: ansible_distribution == "Ubuntu"
+    tags:
+      - shutdown
     
