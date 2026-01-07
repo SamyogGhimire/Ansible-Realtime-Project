@@ -7,6 +7,18 @@ The EC2 instances are created using the localhost connection.
 We also set up passwordless authentication between the Ansible control node and the newly created EC2 instances.
 Finally, we automate the shutdown of only Ubuntu instances using Ansible conditionals.
 
+
+## Project Directory Structure
+```
+├── ec2_create.yaml
+├── ec2_stop.yaml
+├── group_vars
+│   └── all
+│       └── pass.yaml
+├── inventory.ini
+└── vault.pass
+```
+
 # Task 1: Creating EC2 instances
 1. Create three EC2 instances on AWS using Ansible loops:
 - Two instances with Ubuntu distribution
@@ -106,14 +118,3 @@ We use Ansible conditionals to shut down only Ubuntu instances.
 ansible-playbook -i inventory.ini ./ec2_stop.yaml
 ```
 This playbook shuts down only the Ubuntu EC2 instances, while the Amazon Linux instance remains running.
-
-## Project Directory Structure
-```
-├── ec2_create.yaml
-├── ec2_stop.yaml
-├── group_vars
-│   └── all
-│       └── pass.yaml
-├── inventory.ini
-└── vault.pass
-```
