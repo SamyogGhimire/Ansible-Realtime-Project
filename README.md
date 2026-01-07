@@ -61,6 +61,8 @@ This file securely stores the AWS Access Key and Secret Access Key.
         - ec2_create
 
 ```
+ This playbook launches multiple EC2 instances using a loop, allowing different AMIs and instance names to be defined in a single task. It simplifies EC2 provisioning and reduces code duplication by reusing the same configuration for Ubuntu and Amazon Linux instances.
+
 
 ### Running the Ansible playbook to automate tasks
 ```
@@ -96,6 +98,8 @@ We use Ansible conditionals to shut down only Ubuntu instances.
       - shutdown
     
 ```
+ This playbook shuts down only Ubuntu-based EC2 instances by using a conditional check. The task runs the shutdown command exclusively when the target host's operating system is detected as Ubuntu, ensuring other Linux distributions are not affected.
+
 
 ### Stops and shutdown the EC2 instances
 ```
